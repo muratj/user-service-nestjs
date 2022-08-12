@@ -1,9 +1,12 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { Matches } from 'class-validator';
 
 export class UpdateUserDto {
-  @Matches(/[a-zA-Z]{2,}/)
+  @ApiProperty({ example: 'John', required: false })
+  @Matches(/[a-zA-Z]{2,}/g)
   firstName?: string;
 
-  @Matches(/[a-zA-Z]{2,}/)
+  @ApiProperty({ example: 'Doe', required: false })
+  @Matches(/[a-zA-Z]{2,}/g)
   lastName?: string;
 }
