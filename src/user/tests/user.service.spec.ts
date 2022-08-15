@@ -43,7 +43,7 @@ describe('UserController', () => {
     });
 
     test('then saveUser should return User entity without password', () => {
-      const expected = { id: user.id, ...dto };
+      const expected = { id: 5, ...dto };
       delete expected.password;
       expect(user).toEqual(expected);
     });
